@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutflix',
+      title: 'filmysnaps',
       theme: ThemeData().copyWith(
         scaffoldBackgroundColor: Colours.scaffoldBgColor,
         useMaterial3: true,

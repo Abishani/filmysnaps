@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Image.asset(
-          'assets/flutflix.png',
+          'assets/filmysnaps.png',
           fit: BoxFit.cover,
           height: 30,
           filterQuality: FilterQuality.high,
@@ -41,95 +41,99 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.all(
-            8.0,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0, top: 25.0),
+              child: Text(
                 'Trending Movies',
                 style: GoogleFonts.aBeeZee(
-                  fontSize: 25,
+                  fontSize: 20,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 32),
-              SizedBox(
-                child: FutureBuilder(
-                  future: trendingMovies,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Center(
-                        child: Text(snapshot.error.toString()),
-                      );
-                    } else if (snapshot.hasData) {
-                      return TrendingSlider(
-                        snapshot: snapshot,
-                      );
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  },
-                ),
+            ),
+            const SizedBox(height: 32),
+            SizedBox(
+              child: FutureBuilder(
+                future: trendingMovies,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(snapshot.error.toString()),
+                    );
+                  } else if (snapshot.hasData) {
+                    return TrendingSlider(
+                      snapshot: snapshot,
+                    );
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
               ),
-              const SizedBox(height: 32),
-              Text(
+            ),
+            const SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
+              child: Text(
                 'Top Rated Movies',
                 style: GoogleFonts.aBeeZee(
-                  fontSize: 25,
+                  fontSize: 20,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 32),
-              SizedBox(
-                child: FutureBuilder(
-                  future: topRatedMovies,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Center(
-                        child: Text(snapshot.error.toString()),
-                      );
-                    } else if (snapshot.hasData) {
-                      return MovieSlider(
-                        snapshot: snapshot,
-                      );
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  },
-                ),
+            ),
+            const SizedBox(height: 32),
+            SizedBox(
+              child: FutureBuilder(
+                future: topRatedMovies,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(snapshot.error.toString()),
+                    );
+                  } else if (snapshot.hasData) {
+                    return MovieSlider(
+                      snapshot: snapshot,
+                    );
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
               ),
-              const SizedBox(height: 32),
-              Text(
+            ),
+            const SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.only(left: 25.0),
+              child: Text(
                 'Upcomming Movies',
                 style: GoogleFonts.aBeeZee(
-                  fontSize: 25,
+                  fontSize: 20,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 32),
-              SizedBox(
-                child: FutureBuilder(
-                  future: upcomingMovies,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Center(
-                        child: Text(snapshot.error.toString()),
-                      );
-                    } else if (snapshot.hasData) {
-                      return MovieSlider(
-                        snapshot: snapshot,
-                      );
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  },
-                ),
+            ),
+            const SizedBox(height: 32),
+            SizedBox(
+              child: FutureBuilder(
+                future: upcomingMovies,
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(snapshot.error.toString()),
+                    );
+                  } else if (snapshot.hasData) {
+                    return MovieSlider(
+                      snapshot: snapshot,
+                    );
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
