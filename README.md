@@ -1,16 +1,11 @@
-# flutflix
+# filmysnaps
 
-A new Flutter project.
+A Movie application which will display the overview of movies
 
-## Getting Started
+## Tech Stack 
 
-This project is a starting point for a Flutter application.
+Flutter
 
-A few resources to get you started if this is your first Flutter project:
+## Project Details
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Application is built using flutter as frontend language and the application uses the TMDB public api to get the movie details.
