@@ -25,13 +25,15 @@ class DetailsScreen extends StatelessWidget {
             pinned: true,
             floating: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                movie.title,
-                style: GoogleFonts.belleza(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              title: movie.overview.length >= 1000
+                  ? Text(
+                      movie.title,
+                      style: GoogleFonts.belleza(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )
+                  : const Text(""),
               background: ClipRRect(
                 borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(24),
@@ -53,7 +55,7 @@ class DetailsScreen extends StatelessWidget {
                   Text(
                     'Overview',
                     style: GoogleFonts.openSans(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontWeight: FontWeight.w800,
                       color: Colors.white,
                     ),
@@ -103,6 +105,7 @@ class DetailsScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
+                          padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.grey,
